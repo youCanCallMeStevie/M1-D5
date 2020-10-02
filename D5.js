@@ -75,9 +75,15 @@ console.log(variableMe);
 // }
 // console.log("Dice", Dice(1));
 
-const dice = () => {
+// const dice = () => {
+//   return Math.floor(Math.random() * 6 + 1);
+// };
+// console.log("Dice", dice());
+
+
+function dice() {
   return Math.floor(Math.random() * 6 + 1);
-};
+}
 console.log("Dice", dice());
 
 // /* Ex.2 
@@ -178,218 +184,276 @@ console.log(WhatDayIsIt())
 
 
 
-  // /* Ex.8
-  //     Write the function RollTheDices that receives a numeric input and returns an object that contains both the sum of the value of the dices and the dices itself
-  //     This function should use the Dice function defined in Ex1
-  //     Example: RollTheDices(3) => returns {
-  //         sum: 10
-  //         values: [ 3, 3, 4]
-  //     }
-  // */
+// /* Ex.8
+//     Write the function RollTheDices that receives a numeric input and returns an object that contains both the sum of the value of the dices and the dices itself
+//     This function should use the Dice function defined in Ex1
+//     Example: RollTheDices(3) => returns {
+//         sum: 10
+//         values: [ 3, 3, 4]
+//     }
+// */
+
+function dice1() {
+  return Math.floor(Math.random() * 6 + 1);
+}
+console.log("Dice", dice1());
+
+function RollTheDices(num) {
+  let values = []
+  let total = 0
+  for (let x = 0; x < num; x++) {
+    let diceRollResult = dice1()
+    values.push(diceRollResult)
+    total = total + diceRollResult
+  }
+  return {
+    sum: total,
+    values: values,
+  }
+}
+
+console.log("RollTheDices", RollTheDices(4));
+
+// /* Ex.9
+//    Write the function HowManyDays that receives a Date and return the number of days that has passed since that day.
+// */
+
+// /* Ex.10
+//    Write the function IsTodayMyBDay that returns true if it's your birthday, false otherwise
+// */
+
+// // JS Arrays // Objs
+// // NOTE: movies array is defined at the end of the file
+
+// /* Ex.11
+//    Write the function DeleteProp that receives an object and a string, and returns the object after deleting the property with that given name
+// */
+
+// // NOT A FUNCTION THAT CAN BE REPEATED...
+// const DeleteProp = [{
+//   name: "John",
+//   surname: "Rambo"
+// }, "Movie Star"]
+
+// DeleteProp.pop(1)
+
+// console.log(DeleteProp);
 
 
-  // /* Ex.9
-  //    Write the function HowManyDays that receives a Date and return the number of days that has passed since that day.
-  // */
 
-  // /* Ex.10
-  //    Write the function IsTodayMyBDay that returns true if it's your birthday, false otherwise
-  // */
-
-  // // JS Arrays // Objs
-  // // NOTE: movies array is defined at the end of the file
-
-  // /* Ex.11
-  //    Write the function DeleteProp that receives an object and a string, and returns the object after deleting the property with that given name
-  // */
-
-  // // NOT A FUNCTION THAT CAN BE REPEATED...
-  // const DeleteProp = [{
-  //   name: "John",
-  //   surname: "Rambo"
-  // }, "Movie Star"]
-
-  // DeleteProp.pop(1)
-
-  // console.log(DeleteProp);
+// /* Ex.12 
+//     Write the function OlderMovie that finds the older movie in the array
+// */
 
 
+// //console.log(OlderMovie(movies))
 
-  // /* Ex.12 
-  //     Write the function OlderMovie that finds the older movie in the array
-  // */
+// /* Ex.13
+//     Write the function CountMovies that returns the number of movies into the array
+// */
+
+// /* Ex.14
+//     Write the function OnlyTitles that creates an array with only the titles of the movies
+// */
+
+// /* Ex.15
+//    Write the function OnlyThisMillennium that returns only the movies produced in this millennium
+// */
+
+// /* Ex.16 
+//     Write the function GetMovieById that receives an ID and returns the movie with the given ID
+// */
+
+// /* Ex.17
+//     Write the function SumYears that returns the sum of the years the movie has been produced
+// */
+
+// /* Ex.18
+//     Write the function SearchMovie that receives a string and returns all the movies with that string in the title
+// */
+
+// /* Ex.19
+//     Write the function SearchAndDivide that receives a string and returns an object with an array "match" 
+//with all the movies that contains the title and another array "nonMatch" with the other movies
+// */
 
 
-  // //console.log(OlderMovie(movies))
 
-  // /* Ex.13
-  //     Write the function CountMovies that returns the number of movies into the array
-  // */
+// /* Ex.20
+//    Write the function DeleteX that receives a number and returns an array without the element in that position
+// */
 
-  // /* Ex.14
-  //     Write the function OnlyTitles that creates an array with only the titles of the movies
-  // */
+// // JS Advanced
 
-  // /* Ex.15
-  //    Write the function OnlyThisMillennium that returns only the movies produced in this millennium
-  // */
+// /* Ex.21
+//   Create a function HalfTree that recives the height creates an "*" half tree with that height
+//   Example:
+//   HalfTree(3)
+//   *
+//   **
+//   ***
+// */
 
-  // /* Ex.16 
-  //     Write the function GetMovieById that receives an ID and returns the movie with the given ID
-  // */
+function HalfTree(h) {
+  const char = "*"
+  for (let x = 1; x <= h; x++) { //not let x =0  because it will produce 0 astriks in the first line
+    console.log(char.repeat(x))
+  }
+}
+HalfTree(5);
 
-  // /* Ex.17
-  //     Write the function SumYears that returns the sum of the years the movie has been produced
-  // */
+// /* Ex.22 
+//   Create a function Tree that receives the height and creates an "*" tree with that height
+//   Example: 
+//   Tree(3)
+//     *  
+//    *** 
+//   *****
+// */
 
-  // /* Ex.18
-  //     Write the function SearchMovie that receives a string and returns all the movies with that string in the title
-  // */
+function Tree(star) {
+  const char = "*"
+  const space = " ";
+  for (let x = 1; x <= star; x++) { //not let x =0  because it will produce 0 astriks in the first line
+    console.log(space.repeat(star - x) + char.repeat(x * 2 - 1))
+  }
+}
+Tree(5);
 
-  // /* Ex.19
-  //     Write the function SearchAndDivide that receives a string and returns an object with an array "match" with all the movies that contains the title and another array "nonMatch" with the other movies
-  // */
+// /* Ex.23
+//   Create a function IsItPrime that receives a number and return true if the number is a prime number
+// */
 
-  // /* Ex.20
-  //    Write the function DeleteX that receives a number and returns an array without the element in that position
-  // */
+// /* Movies array is an example array, used for the exs. Don't change it :)  */
+const movies = [
+  {
+    Title: "The Lord of the Rings: The Fellowship of the Ring",
+    Year: "2001",
+    imdbID: "tt0120737",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lord of the Rings: The Return of the King",
+    Year: "2003",
+    imdbID: "tt0167260",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lord of the Rings: The Two Towers",
+    Year: "2002",
+    imdbID: "tt0167261",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lord of War",
+    Year: "2005",
+    imdbID: "tt0399295",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lords of Dogtown",
+    Year: "2005",
+    imdbID: "tt0355702",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lord of the Rings",
+    Year: "1978",
+    imdbID: "tt0077869",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lord of the Flies",
+    Year: "1990",
+    imdbID: "tt0100054",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Lords of Salem",
+    Year: "2012",
+    imdbID: "tt1731697",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
+  },
+  {
+    Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
+    Year: "1984",
+    imdbID: "tt0087365",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
+  },
+  {
+    Title: "Lord of the Flies",
+    Year: "1963",
+    imdbID: "tt0057261",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
+  },
+  {
+    Title: "The Avengers",
+    Year: "2012",
+    imdbID: "tt0848228",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+  },
+  {
+    Title: "Avengers: Infinity War",
+    Year: "2018",
+    imdbID: "tt4154756",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
+  },
+  {
+    Title: "Avengers: Age of Ultron",
+    Year: "2015",
+    imdbID: "tt2395427",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
+  },
+  {
+    Title: "Avengers: Endgame",
+    Year: "2019",
+    imdbID: "tt4154796",
+    Type: "movie",
+    Poster:
+      "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
+  },
+];
 
-  // // JS Advanced
+// function SearchAndDivide(str) {
+//   let match = []
+//   let nonMatch = []
+//   for (let x = 0; x < movies.length; x++) {
+//     if (movies[x].Titles.includes(str)) {
+//       match.push(movies[x])
+//     } else {
+//       nonMatch.push(movies[x]);
+//     }
+//   }
+//   return {
+//     match: match,
+//     nonMatch: nonMatch,
+//   };
+// }
 
-  // /* Ex.21
-  //   Create a function HalfTree that recives the height creates an "*" half tree with that height
-  //   Example:
-  //   HalfTree(3)
-  //   *
-  //   **
-  //   ***
-  // */
-
-  // /* Ex.22 
-  //   Create a function Tree that receives the height and creates an "*" tree with that height
-  //   Example: 
-  //   Tree(3)
-  //     *  
-  //    *** 
-  //   *****
-  // */
-
-  // /* Ex.23
-  //   Create a function IsItPrime that receives a number and return true if the number is a prime number
-  // */
-
-  // /* Movies array is an example array, used for the exs. Don't change it :)  */
-  // const movies = [
-  //   {
-  //     Title: "The Lord of the Rings: The Fellowship of the Ring",
-  //     Year: "2001",
-  //     imdbID: "tt0120737",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "The Lord of the Rings: The Return of the King",
-  //     Year: "2003",
-  //     imdbID: "tt0167260",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "The Lord of the Rings: The Two Towers",
-  //     Year: "2002",
-  //     imdbID: "tt0167261",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BNGE5MzIyNTAtNWFlMC00NDA2LWJiMjItMjc4Yjg1OWM5NzhhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Lord of War",
-  //     Year: "2005",
-  //     imdbID: "tt0399295",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BMTYzZWE3MDAtZjZkMi00MzhlLTlhZDUtNmI2Zjg3OWVlZWI0XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Lords of Dogtown",
-  //     Year: "2005",
-  //     imdbID: "tt0355702",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BNDBhNGJlOTAtM2ExNi00NmEzLWFmZTQtYTZhYTRlNjJjODhmXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "The Lord of the Rings",
-  //     Year: "1978",
-  //     imdbID: "tt0077869",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BOGMyNWJhZmYtNGQxYi00Y2ZjLWJmNjktNTgzZWJjOTg4YjM3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Lord of the Flies",
-  //     Year: "1990",
-  //     imdbID: "tt0100054",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BOTI2NTQyODk0M15BMl5BanBnXkFtZTcwNTQ3NDk0NA@@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "The Lords of Salem",
-  //     Year: "2012",
-  //     imdbID: "tt1731697",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BMjA2NTc5Njc4MV5BMl5BanBnXkFtZTcwNTYzMTcwOQ@@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Greystoke: The Legend of Tarzan, Lord of the Apes",
-  //     Year: "1984",
-  //     imdbID: "tt0087365",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BMTM5MzcwOTg4MF5BMl5BanBnXkFtZTgwOTQwMzQxMDE@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Lord of the Flies",
-  //     Year: "1963",
-  //     imdbID: "tt0057261",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BOGEwYTlhMTgtODBlNC00ZjgzLTk1ZmEtNmNkMTEwYTZiM2Y0XkEyXkFqcGdeQXVyMzU4Nzk4MDI@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "The Avengers",
-  //     Year: "2012",
-  //     imdbID: "tt0848228",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Avengers: Infinity War",
-  //     Year: "2018",
-  //     imdbID: "tt4154756",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Avengers: Age of Ultron",
-  //     Year: "2015",
-  //     imdbID: "tt2395427",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg",
-  //   },
-  //   {
-  //     Title: "Avengers: Endgame",
-  //     Year: "2019",
-  //     imdbID: "tt4154796",
-  //     Type: "movie",
-  //     Poster:
-  //       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
-  //   },
-  // ];
+// console.log("SearchAndDivide", SearchAndDivide("Avengers"));
